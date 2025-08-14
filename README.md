@@ -4,7 +4,6 @@ A modern and intuitive grocery shopping app built with Flutter. Browse products,
 
 ## 📱 Screens & Descriptions
 
-> Note: Splash screen is intentionally omitted.
 
 | | | |
 |---|---|---|

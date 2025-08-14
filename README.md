@@ -1,40 +1,49 @@
 # Nectar - Grocery Shopping App 🛒
 
-A modern and intuitive grocery shopping app built with Flutter, offering a seamless shopping experience with product browsing, cart management, favorites, and user authentication.
+A modern and intuitive grocery shopping app built with Flutter. Browse products, manage a cart and favourites, and sign in securely — all with a clean, polished UI.
 
-## 📱 Screenshots
+## 📱 Screens & Descriptions
 
-<div align="center">
-  <img src="screenshots/login.png" width="220" alt="Login"/>
-  <img src="screenshots/login_with_validator.png" width="220" alt="Login (Validation)"/>
-  <img src="screenshots/signup.png" width="220" alt="Sign Up"/>
-</div>
+> Note: Splash screen is intentionally omitted.
 
-<div align="center">
-  <img src="screenshots/shop.png" width="220" alt="Shop"/>
-  <img src="screenshots/explore.png" width="220" alt="Explore"/>
-  <img src="screenshots/cart.png" width="220" alt="Cart"/>
-</div>
+| | | |
+|---|---|---|
+| <img src="screenshots/login.png" width="240" alt="Login"/> | <img src="screenshots/login_with_validator.png" width="240" alt="Login with validation"/> | <img src="screenshots/signup.png" width="240" alt="Sign up"/> |
+| <sub>Login</sub><br/><sub>Simple, focused sign-in to get users in quickly.</sub> | <sub>Login (Validation)</sub><br/><sub>Field-level validation for clear, actionable errors.</sub> | <sub>Sign Up</sub><br/><sub>Streamlined account creation with minimal friction.</sub> |
+| <img src="screenshots/shop.png" width="240" alt="Shop"/> | <img src="screenshots/explore.png" width="240" alt="Explore"/> | <img src="screenshots/cart.png" width="240" alt="Cart"/> |
+| <sub>Shop</sub><br/><sub>Curated home with featured and best-sellers.</sub> | <sub>Explore</sub><br/><sub>Category-based discovery and search.</sub> | <sub>Cart</sub><br/><sub>Quantity controls, price summary, and checkout entry.</sub> |
+| <img src="screenshots/favourite.png" width="240" alt="Favourites"/> | <img src="screenshots/location.png" width="240" alt="Location"/> | <img src="screenshots/profile.png" width="240" alt="Profile"/> |
+| <sub>Favourites</sub><br/><sub>Save and revisit the items you love.</sub> | <sub>Location</sub><br/><sub>Address selection to personalize delivery.</sub> | <sub>Profile</sub><br/><sub>Account details and app settings.</sub> |
 
-<div align="center">
-  <img src="screenshots/favourite.png" width="220" alt="Favourites"/>
-  <img src="screenshots/location.png" width="220" alt="Location"/>
-  <img src="screenshots/profile.png" width="220" alt="Profile"/>
-</div>
+## ✨ Highlights
 
-## ✨ Features
+- Smooth bottom navigation with clear state persistence
+- Input validation with friendly, inline messages
+- Reusable UI components for consistent design
+- Feature-first architecture for scalable code
 
-- 🔐 Authentication (login and registration)
-- 🏠 Home/shop with featured and best-selling products
-- 🔍 Explore by categories
-- 🛒 Cart with quantity controls and totals
-- ❤️ Favourites
-- 👤 Profile
-- 📱 Smooth bottom navigation
-
-## 🛠️ Built With
+## 🛠️ Tech Stack
 
 - Flutter (Dart)
-- Flutter SVG for icons
-- Feature-based folder structure
+- flutter_svg for vector icons
 
+## 🚀 Getting Started
+
+1. Install Flutter and set up your device/emulator
+2. Fetch dependencies:
+   ```bash
+   flutter pub get
+   ```
+3. Run the app:
+   ```bash
+   flutter run
+   ```
+
+## 📂 Structure (brief)
+
+```
+lib/
+├─ components/      # Reusable widgets
+├─ core/            # Constants, utils, extensions
+├─ features/        # auth, cart, explore, favs, home, location, nav_bar, profile, splash
+└─ main.dart        # App entry

@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:nectar_app/components/search_fields.dart';
 import 'package:nectar_app/core/Constants/assets_names.dart';
 import 'package:nectar_app/core/utils/app_colors.dart';
-import 'package:nectar_app/features/home/widgets/best_selling_cards.dart';
-import 'package:nectar_app/features/home/widgets/products_slide.dart';
+import 'package:nectar_app/features/home/model/home_model.dart';
+import 'package:nectar_app/features/home/widgets/item_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -25,67 +25,77 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: SafeArea(
-            child: Column(
-              children: [
-                // logoHeader(),
-                SearchFields(label: 'Search Store'),
-                SizedBox(height: 24),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Exclusive Offer',
+          child: Column(
+            children: [
+              // logoHeader(),
+              SearchFields(label: 'Search Store'),
+              SizedBox(height: 24),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Exclusive Offer',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.darkC,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'See All',
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.darkC,
+                        color: AppColors.primaryC,
                       ),
                     ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.primaryC,
-                        ),
-                      ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              ItemCard<ProductsModel>(
+                items: productsList,
+                getName: (item) => item.name,
+                getQuantity: (item) => item.quantity,
+                getPrice: (item) => item.price,
+                getImage: (item) => item.image,
+              ),
+              SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Best Selling',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.darkC,
                     ),
-                  ],
-                ),
-                SizedBox(height: 20),
-                ProductsSlide(),
-                SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Best Selling',
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'See All',
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.darkC,
+                        color: AppColors.primaryC,
                       ),
                     ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.primaryC,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 20),
-                BestSellingCards(),
-              ],
-            ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              ItemCard<BestSelling>(
+                items: bestSellingList,
+                getName: (item) => item.name,
+                getQuantity: (item) => item.quantity,
+                getPrice: (item) => item.price,
+                getImage: (item) => item.image,
+              ),
+            ],
           ),
         ),
       ),

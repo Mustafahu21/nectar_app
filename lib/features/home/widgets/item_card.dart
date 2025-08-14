@@ -1,10 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/utils/app_colors.dart';
-import 'package:nectar_app/features/home/model/home_model.dart';
 
-class BestSellingCards extends StatelessWidget {
-  const BestSellingCards({super.key});
+class ItemCard<T> extends StatefulWidget {
+  const ItemCard({
+    super.key,
+    required this.items,
+    required this.getName,
+    required this.getQuantity,
+    required this.getPrice,
+    required this.getImage,
+  });
 
+  final List<T> items;
+  final String Function(T) getName;
+  final String Function(T) getQuantity;
+  final double Function(T) getPrice;
+  final String Function(T) getImage;
+
+  @override
+  State<ItemCard<T>> createState() => _ItemCardState<T>();
+}
+
+class _ItemCardState<T> extends State<ItemCard<T>> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -12,7 +29,7 @@ class BestSellingCards extends StatelessWidget {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          var item = bestSellingList[index];
+          var item = widget.items[index];
           return Container(
             width: 180,
             height: 250,
@@ -27,7 +44,7 @@ class BestSellingCards extends StatelessWidget {
                   Expanded(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Image.asset(item.image)],
+                      children: [Image.asset(widget.getImage(item))],
                     ),
                   ),
                   SizedBox(height: 25),
@@ -38,7 +55,7 @@ class BestSellingCards extends StatelessWidget {
                           fit: BoxFit.scaleDown,
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            item.name,
+                            widget.getName(item),
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w900,
@@ -53,7 +70,7 @@ class BestSellingCards extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        '${item.quantity}, Priceg',
+                        '${widget.getQuantity(item)}, Priceg',
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
@@ -68,7 +85,7 @@ class BestSellingCards extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          '\$${item.price}',
+                          '\$${widget.getPrice(item)}',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w900,
@@ -93,7 +110,7 @@ class BestSellingCards extends StatelessWidget {
         separatorBuilder: (context, index) {
           return SizedBox(width: 15);
         },
-        itemCount: bestSellingList.length,
+        itemCount: widget.items.length,
       ),
     );
   }

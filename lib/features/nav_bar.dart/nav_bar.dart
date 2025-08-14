@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nectar_app/core/Constants/assets_names.dart';
 import 'package:nectar_app/core/utils/app_colors.dart';
+import 'package:nectar_app/features/cart/page/cart_screen.dart';
 import 'package:nectar_app/features/explore/page/explore_page.dart';
+import 'package:nectar_app/features/favs/pages/favs_screen.dart';
 import 'package:nectar_app/features/home/page/home_screen.dart';
+import 'package:nectar_app/features/profile/pages/profile_screen.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -15,7 +18,13 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   int selectedIndex = 0;
 
-  List<Widget> screens = [HomeScreen(), ExplorePage()];
+  List<Widget> screens = [
+    HomeScreen(),
+    ExplorePage(),
+    CartScreen(),
+    FavsScreen(),
+    ProfileScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +67,7 @@ class _NavBarState extends State<NavBar> {
               ),
               icon: SvgPicture.asset(
                 AppAssets.shop,
-                colorFilter: ColorFilter.mode(AppColors.greyC, BlendMode.srcIn),
+                colorFilter: ColorFilter.mode(AppColors.darkC, BlendMode.srcIn),
               ),
               label: 'Shop',
             ),
@@ -72,7 +81,7 @@ class _NavBarState extends State<NavBar> {
               ),
               icon: SvgPicture.asset(
                 AppAssets.explore,
-                colorFilter: ColorFilter.mode(AppColors.greyC, BlendMode.srcIn),
+                colorFilter: ColorFilter.mode(AppColors.darkC, BlendMode.srcIn),
               ),
               label: 'Explore',
             ),
@@ -86,7 +95,7 @@ class _NavBarState extends State<NavBar> {
               ),
               icon: SvgPicture.asset(
                 AppAssets.cart,
-                colorFilter: ColorFilter.mode(AppColors.greyC, BlendMode.srcIn),
+                colorFilter: ColorFilter.mode(AppColors.darkC, BlendMode.srcIn),
               ),
               label: 'Cart',
             ),
@@ -100,7 +109,7 @@ class _NavBarState extends State<NavBar> {
               ),
               icon: SvgPicture.asset(
                 AppAssets.favourite,
-                colorFilter: ColorFilter.mode(AppColors.greyC, BlendMode.srcIn),
+                colorFilter: ColorFilter.mode(AppColors.darkC, BlendMode.srcIn),
               ),
               label: 'Favourite',
             ),
@@ -114,7 +123,7 @@ class _NavBarState extends State<NavBar> {
               ),
               icon: SvgPicture.asset(
                 AppAssets.profile,
-                colorFilter: ColorFilter.mode(AppColors.greyC, BlendMode.srcIn),
+                colorFilter: ColorFilter.mode(AppColors.darkC, BlendMode.srcIn),
               ),
               label: 'Profile',
             ),

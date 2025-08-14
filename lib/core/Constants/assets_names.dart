@@ -15,4 +15,17 @@ class AppAssets {
   static const String favourite = 'assets/icons/favourite.svg';
   static const String cart = 'assets/icons/cart.svg';
   static const String profile = 'assets/icons/profile.svg';
+  static const String bakery = 'assets/images/bakery.png';
+  static const String fwakeh_5odar = 'assets/images/5odar.png';
+  static const String zyot = 'assets/images/zyot.png';
+  static const String la7ma = 'assets/images/la7ma.png';
+  static const String groceries = 'assets/images/koshk.png';
+  static const String dairy = 'assets/images/diary.png';
+  static const String pepsi = 'assets/images/pepsi.png';
+  static const String coca = 'assets/images/coca.png';
+  static const String cocadiet = 'assets/images/cocadiet.png';
+  static const String sprite = 'assets/images/sprite.png';
+  static const String juice = 'assets/images/juice.png';
+  static const String juice2 = 'assets/images/juice2.png';
+  static const String pen = 'assets/icons/editpen.svg';
 }

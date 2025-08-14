@@ -5,7 +5,7 @@ import 'package:nectar_app/core/Constants/assets_names.dart';
 import 'package:nectar_app/core/extensions/navigators.dart';
 import 'package:nectar_app/core/utils/app_colors.dart';
 import 'package:nectar_app/components/form_fields.dart';
-import 'package:nectar_app/features/home/page/home_screen.dart';
+import 'package:nectar_app/features/nav_bar.dart/nav_bar.dart';
 
 class LocationScreen extends StatelessWidget {
   const LocationScreen({super.key});
@@ -60,7 +60,7 @@ class LocationScreen extends StatelessWidget {
               MainButton(
                 text: 'Confirm Location',
                 onPressed: () {
-                  pushReplacementTo(context, HomeScreen());
+                  pushReplacementTo(context, NavBar());
                 },
               ),
             ],

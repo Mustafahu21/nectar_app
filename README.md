@@ -27,18 +27,6 @@ A modern and intuitive grocery shopping app built with Flutter. Browse products,
 - Flutter (Dart)
 - flutter_svg for vector icons
 
-## 🚀 Getting Started
-
-1. Install Flutter and set up your device/emulator
-2. Fetch dependencies:
-   ```bash
-   flutter pub get
-   ```
-3. Run the app:
-   ```bash
-   flutter run
-   ```
-
 ## 📂 Structure (brief)
 
 ```

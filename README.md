@@ -2,8 +2,13 @@
 
 A modern and intuitive grocery shopping app built with Flutter. Browse products, manage a cart and favourites, and sign in securely — all with a clean, polished UI.
 
-## 📱 Screens & Descriptions
+## 🎬 Demo
 
+<div align="center">
+  <img src="screenshots/nectar.gif" width="280" alt="Nectar app demo"/>
+</div>
+
+## 📱 Screens & Descriptions
 
 | | | |
 |---|---|---|
@@ -21,11 +26,6 @@ A modern and intuitive grocery shopping app built with Flutter. Browse products,
 - Reusable UI components for consistent design
 - Feature-first architecture for scalable code
 
-## 🛠️ Tech Stack
-
-- Flutter (Dart)
-- flutter_svg for vector icons
-
 ## 📂 Structure (brief)
 
 ```
@@ -34,3 +34,4 @@ lib/
 ├─ core/            # Constants, utils, extensions
 ├─ features/        # auth, cart, explore, favs, home, location, nav_bar, profile, splash
 └─ main.dart        # App entry
+```

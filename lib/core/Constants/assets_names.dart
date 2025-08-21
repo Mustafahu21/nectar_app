@@ -28,4 +28,8 @@ class AppAssets {
   static const String juice = 'assets/images/juice.png';
   static const String juice2 = 'assets/images/juice2.png';
   static const String pen = 'assets/icons/editpen.svg';
+  static const String welcome = 'assets/images/welcome.png';
+  static const String welcomePic = 'assets/images/welcome_pic.png';
+  static const String orderplaced = 'assets/images/orderplaced.svg';
+  static const String orangejuice = 'assets/images/orangejui.png';
 }

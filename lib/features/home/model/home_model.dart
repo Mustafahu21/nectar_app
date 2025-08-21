@@ -16,13 +16,13 @@ class ProductsModel {
 
 List<ProductsModel> productsList = [
   ProductsModel(
-    name: 'Tofa7',
+    name: 'Apple',
     quantity: '1kg',
     price: 4.99,
     image: AppAssets.tofa7,
   ),
   ProductsModel(
-    name: 'Organic Moz',
+    name: 'Banana',
     quantity: '1kg',
     price: 4.99,
     image: AppAssets.moz,
@@ -45,7 +45,7 @@ class BestSelling {
 
 List<BestSelling> bestSellingList = [
   BestSelling(
-    name: 'Felfel',
+    name: 'Pepper',
     quantity: '1kg',
     price: 5.99,
     image: AppAssets.felfel,

@@ -16,14 +16,9 @@ class CartModel {
 }
 
 List<CartModel> cartlist = [
+  CartModel(name: 'Banana', quantity: '1kg', price: 4.99, image: AppAssets.moz),
   CartModel(
-    name: 'Organic Moz',
-    quantity: '1kg',
-    price: 4.99,
-    image: AppAssets.moz,
-  ),
-  CartModel(
-    name: 'Felfel',
+    name: 'Pepper',
     quantity: '1kg',
     price: 5.99,
     image: AppAssets.felfel,

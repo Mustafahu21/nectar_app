@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/core/extensions/navigators.dart';
 import 'package:nectar_app/core/utils/app_colors.dart';
+import 'package:nectar_app/features/category/pages/category_screen.dart';
 
 class CategoryCard<T> extends StatefulWidget {
   const CategoryCard({
@@ -37,7 +39,9 @@ class _CategoryCardState<T> extends State<CategoryCard<T>> {
       itemBuilder: (BuildContext context, int index) {
         var item = widget.items[index];
         return GestureDetector(
-          onTap: () {},
+          onTap: () {
+            pushTo(context, CategoryScreen());
+          },
           child: Container(
             width: 175,
             height: 190,

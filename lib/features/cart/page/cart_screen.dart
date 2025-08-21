@@ -1,7 +1,13 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:nectar_app/components/main_button.dart';
+import 'package:nectar_app/core/extensions/navigators.dart';
 import 'package:nectar_app/core/utils/app_colors.dart';
 import 'package:nectar_app/features/cart/model/cart_model.dart';
+import 'package:nectar_app/features/cart/model/checkout_model.dart';
 import 'package:nectar_app/features/cart/widget/cart_list.dart';
+import 'package:nectar_app/features/cart/widget/checkout_list.dart';
+import 'package:nectar_app/features/thanks/placed_order.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -65,7 +71,74 @@ class _CartScreenState extends State<CartScreen> {
                   ),
                 ),
                 onPressed: () {
-                  // Handle checkout action
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return Container(
+                        // padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(25),
+                            topRight: Radius.circular(25),
+                          ),
+                        ),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Checkout',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 25,
+                                    ),
+                                  ),
+                                  IconButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    icon: Icon(Icons.close),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Divider(
+                              color: const Color.fromARGB(180, 226, 226, 226),
+                              height: 10,
+                            ),
+                            CheckoutList(
+                              items: checkoutList,
+                              totalPrice: totalPrice,
+                            ),
+                            termsNpolicy(),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                20.0,
+                                8.0,
+                                20.0,
+                                8.0,
+                              ),
+                              child: MainButton(
+                                text: 'Place Order',
+                                onPressed: () {
+                                  pushReplacementTo(
+                                    context,
+                                    PlacedOrderScreen(),
+                                  );
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -106,6 +179,56 @@ class _CartScreenState extends State<CartScreen> {
                   ],
                 ),
               ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  termsNpolicy() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+      child: RichText(
+        text: TextSpan(
+          text: 'By placing an order you agree to our ',
+          style: TextStyle(
+            color: AppColors.greyC,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+          children: [
+            TextSpan(
+              text: 'Terms ',
+              style: TextStyle(
+                color: AppColors.darkC,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  //
+                },
+            ),
+            TextSpan(
+              text: 'and ',
+              style: TextStyle(
+                color: AppColors.greyC,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            TextSpan(
+              text: 'Condintions. ',
+              style: TextStyle(
+                color: AppColors.darkC,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  //
+                },
             ),
           ],
         ),
